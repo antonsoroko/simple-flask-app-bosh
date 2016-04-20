@@ -1,0 +1,7 @@
+---
+blobstore:
+  provider: local
+  options:
+    blobstore_path: /tmp/simple-flask-app-blobs
+final_name: simpleflaskapp
+

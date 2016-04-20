@@ -1,0 +1,7 @@
+---
+blobstore_secret: 'does-not-matter'
+blobstore:
+  local:
+    blobstore_path: /tmp/simple-flask-app-blobs
+
+
