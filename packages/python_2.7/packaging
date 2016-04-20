@@ -1,0 +1,19 @@
+# abort script on any command that exits with a non zero value
+set -e -x
+
+echo "Compiling Python itself"
+tar xzf python_2.7/Python-2.7.11.tgz
+pushd Python-2.7.11
+  ./configure \
+    --prefix=${BOSH_INSTALL_TARGET} \
+    --with-ensurepip
+
+  make
+  make install
+popd
+
+echo "Installing necessary packages"
+${BOSH_INSTALL_TARGET}/bin/pip install --upgrade python_2.7/wheel-0.29.0-py2.py3-none-any.whl
+${BOSH_INSTALL_TARGET}/bin/pip install --upgrade python_2.7/pip-8.1.1-py2.py3-none-any.whl
+${BOSH_INSTALL_TARGET}/bin/pip install --upgrade python_2.7/setuptools-20.9.0-py2.py3-none-any.whl
+${BOSH_INSTALL_TARGET}/bin/pip install --upgrade python_2.7/virtualenv-15.0.1-py2.py3-none-any.whl
