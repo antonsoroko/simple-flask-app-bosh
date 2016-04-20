@@ -60,3 +60,12 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+#custom
+src/simpleflaskapp/venv/
+.blobs/
+blobs/
+.dev_builds/
+.final_builds/
+config/dev.yml
+dev_releases/
