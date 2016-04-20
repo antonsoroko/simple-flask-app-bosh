@@ -1,0 +1,8 @@
+---
+name: simpleflaskapp
+
+dependencies:
+- python_2.7
+
+files:
+- simpleflaskapp/**/*
