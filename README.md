@@ -48,3 +48,11 @@ bosh upload blobs
 ```
 bosh create release --final
 ```
+- Upload the new final release:
+```
+bosh upload release
+```
+- Deploy final release:
+```
+bosh deploy
+```
