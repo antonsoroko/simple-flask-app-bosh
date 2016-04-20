@@ -26,6 +26,10 @@ bosh create release --force
 $ bosh target
 $ bosh target <director_url>
 ```
+- Set director_uuid and net_id in manifest.yml:
+```
+$ vim manifest.yml
+```
 - Choose deployment:
 ```
 $ bosh deployments
