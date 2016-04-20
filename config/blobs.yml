@@ -1,0 +1,21 @@
+---
+python_2.7/pip-8.1.1-py2.py3-none-any.whl:
+  object_id: 6a0f0ce4-d857-42a8-843b-2410ee23a23d
+  sha: 89adc4227395c075ac63845a82cb1de775d77fe0
+  size: 1197664
+python_2.7/virtualenv-15.0.1-py2.py3-none-any.whl:
+  object_id: b645531c-bd59-44e9-a9fd-7220085f9ad2
+  sha: a5513186e9f7da15642333197f842da8b946675a
+  size: 1799857
+python_2.7/wheel-0.29.0-py2.py3-none-any.whl:
+  object_id: 23309464-2ac1-4cbe-a1db-226e16d864c0
+  sha: fcbf015b87179d0ad05eeb1c72282c172e313793
+  size: 66878
+python_2.7/setuptools-20.9.0-py2.py3-none-any.whl:
+  object_id: 280f31b6-13bb-4f6c-976e-2206bb9e0012
+  sha: 7653569429e2e330aa79a61d5f0468da71e1ff40
+  size: 508813
+python_2.7/Python-2.7.11.tgz:
+  object_id: f474acd8-9cab-4c44-9b78-c3413591cd24
+  sha: 62a0b1b703d42999cc4aa9ee3c55eb7efe35802a
+  size: 16856409
