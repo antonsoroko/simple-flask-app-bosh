@@ -1,0 +1,14 @@
+---
+name: simpleflaskapp
+templates:
+  ctl.erb: bin/ctl
+  gunicorn.conf.py.erb: gunicorn.conf.py
+
+packages:
+- python_2.7
+- simpleflaskapp
+
+properties:
+   simpleflaskapp.port:
+     description: Port that simpleflaskapp app listens on
+     default: 8181

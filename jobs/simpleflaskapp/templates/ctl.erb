@@ -1,0 +1,36 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/simpleflaskapp
+LOG_DIR=/var/vcap/sys/log/simpleflaskapp
+PIDFILE=${RUN_DIR}/pid
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    echo $$ > $PIDFILE
+
+    cd /var/vcap/packages/simpleflaskapp
+
+    . venv/bin/activate
+
+    exec gunicorn simpleflaskapp:app --config /var/vcap/jobs/simpleflaskapp/gunicorn.conf.py \
+      >>  $LOG_DIR/simpleflaskapp.stdout.log \
+      2>> $LOG_DIR/simpleflaskapp.stderr.log
+
+    ;;
+
+  stop)
+    kill `cat $PIDFILE`
+    sleep 5
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac
