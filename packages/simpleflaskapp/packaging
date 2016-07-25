@@ -5,10 +5,12 @@ cp -a simpleflaskapp/* ${BOSH_INSTALL_TARGET}
 
 cd ${BOSH_INSTALL_TARGET}
 
-export PYTHONPATH=/var/vcap/packages/python_2.7/bin/python
-/var/vcap/packages/python_2.7/bin/virtualenv --always-copy venv
+export LD_LIBRARY_PATH=/var/vcap/packages/python_2.7/lib:$LD_LIBRARY_PATH
+export C_INCLUDE_PATH=/var/vcap/packages/python_2.7/include:$C_INCLUDE_PATH
+
+PATH=/var/vcap/packages/python_2.7/bin:$PATH /var/vcap/packages/python_2.7/bin/virtualenv --always-copy venv
 . venv/bin/activate
 pip install -r requirements.txt
-/var/vcap/packages/python_2.7/bin/virtualenv --relocatable venv
+PATH=/var/vcap/packages/python_2.7/bin:$PATH /var/vcap/packages/python_2.7/bin/virtualenv --relocatable venv
 deactivate
 sed -i 's/^\(VIRTUAL_ENV\)=.\+$/\1="\/var\/vcap\/packages\/simpleflaskapp\/venv"/g' venv/bin/activate
