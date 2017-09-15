@@ -1,6 +1,6 @@
 ---
 name: simpleflaskapp-deployment
-director_uuid: ba9d766d-88ec-4b44-94ce-450f3087e971
+director_uuid: CHANGE_ME
 
 releases:
 - {name: simpleflaskapp, version: latest}
@@ -10,7 +10,7 @@ resource_pools:
   network: default
   stemcell:
     name: bosh-openstack-kvm-ubuntu-trusty-go_agent
-    version: 3215.4
+    version: latest
   cloud_properties:
     instance_type: m1.small
 
@@ -18,14 +18,14 @@ networks:
 - name: default
   type: dynamic
   cloud_properties:
-    net_id: a2f6db65-99ca-481a-9e97-fc9952f8b791
+    net_id: CHANGE_ME
 
 compilation:
   workers: 1
   network: default
   reuse_compilation_vms: true
   cloud_properties:
-    instance_type: m1.small
+    instance_type: m1.medium
 
 update:
   canaries: 1
