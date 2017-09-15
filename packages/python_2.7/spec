@@ -5,7 +5,8 @@ dependencies:
 
 files:
 - python_2.7/Python-2.7.11.tgz # https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz
-- python_2.7/wheel-0.29.0-py2.py3-none-any.whl # https://pypi.python.org/packages/py2.py3/w/wheel/wheel-0.29.0-py2.py3-none-any.whl#md5=d7db45db5c131af262b8ffccde46a88a
-- python_2.7/pip-8.1.1-py2.py3-none-any.whl # https://pypi.python.org/packages/py2.py3/p/pip/pip-8.1.1-py2.py3-none-any.whl#md5=22db7b6a517a09c29d54a76650f170eb
-- python_2.7/setuptools-20.9.0-py2.py3-none-any.whl # https://pypi.python.org/packages/py2.py3/s/setuptools/setuptools-20.9.0-py2.py3-none-any.whl#md5=3c30f06d49375cd14ed6414da72b3da6
-- python_2.7/virtualenv-15.0.1-py2.py3-none-any.whl # https://pypi.python.org/packages/py2.py3/v/virtualenv/virtualenv-15.0.1-py2.py3-none-any.whl#md5=1fca0d03249563ccc475d39cfe71491e
+- python_2.7/vendor/wheel-0.29.0-py2.py3-none-any.whl # https://pypi.python.org/packages/py2.py3/w/wheel/wheel-0.29.0-py2.py3-none-any.whl#md5=d7db45db5c131af262b8ffccde46a88a
+- python_2.7/vendor/pip-8.1.1-py2.py3-none-any.whl # https://pypi.python.org/packages/py2.py3/p/pip/pip-8.1.1-py2.py3-none-any.whl#md5=22db7b6a517a09c29d54a76650f170eb
+- python_2.7/vendor/setuptools-20.9.0-py2.py3-none-any.whl # https://pypi.python.org/packages/py2.py3/s/setuptools/setuptools-20.9.0-py2.py3-none-any.whl#md5=3c30f06d49375cd14ed6414da72b3da6
+- python_2.7/vendor/virtualenv-15.0.1-py2.py3-none-any.whl # https://pypi.python.org/packages/py2.py3/v/virtualenv/virtualenv-15.0.1-py2.py3-none-any.whl#md5=1fca0d03249563ccc475d39cfe71491e
+- python_2.7/requirements.txt

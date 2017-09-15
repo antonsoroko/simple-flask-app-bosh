@@ -1,20 +1,21 @@
 # abort script on any command that exits with a non zero value
 set -e -x
 
+# Detect # of CPUs so make jobs can be parallelized
+CPUS=$(grep -c ^processor /proc/cpuinfo)
+
 echo "Compiling Python itself"
 tar xzf python_2.7/Python-2.7.11.tgz
 pushd Python-2.7.11
   ./configure \
     --prefix=${BOSH_INSTALL_TARGET} \
-    --with-ensurepip
+    --with-ensurepip \
     --enable-shared
 
-  make
+  make -j $CPUS
   make install
 popd
 
-echo "Installing necessary packages"
-${BOSH_INSTALL_TARGET}/bin/pip install --upgrade python_2.7/wheel-0.29.0-py2.py3-none-any.whl
-${BOSH_INSTALL_TARGET}/bin/pip install --upgrade python_2.7/pip-8.1.1-py2.py3-none-any.whl
-${BOSH_INSTALL_TARGET}/bin/pip install --upgrade python_2.7/setuptools-20.9.0-py2.py3-none-any.whl
-${BOSH_INSTALL_TARGET}/bin/pip install --upgrade python_2.7/virtualenv-15.0.1-py2.py3-none-any.whl
+echo "Installing vendor packages"
+export PATH=${BOSH_INSTALL_TARGET}/bin:$PATH LD_LIBRARY_PATH=${BOSH_INSTALL_TARGET}/lib:$LD_LIBRARY_PATH C_INCLUDE_PATH=${BOSH_INSTALL_TARGET}/include:$C_INCLUDE_PATH
+pip install --upgrade --no-index --find-links python_2.7/vendor -r python_2.7/requirements.txt
