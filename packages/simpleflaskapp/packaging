@@ -1,16 +1,21 @@
 # abort script on any command that exits with a non zero value
 set -e -x
 
-cp -a simpleflaskapp/* ${BOSH_INSTALL_TARGET}
-
-cd ${BOSH_INSTALL_TARGET}
+PACKAGE_NAME=simpleflaskapp
+echo "Installing $PACKAGE_NAME"
 
 export LD_LIBRARY_PATH=/var/vcap/packages/python_2.7/lib:$LD_LIBRARY_PATH
 export C_INCLUDE_PATH=/var/vcap/packages/python_2.7/include:$C_INCLUDE_PATH
 
-PATH=/var/vcap/packages/python_2.7/bin:$PATH /var/vcap/packages/python_2.7/bin/virtualenv --always-copy venv
-. venv/bin/activate
-pip install -r requirements.txt
-PATH=/var/vcap/packages/python_2.7/bin:$PATH /var/vcap/packages/python_2.7/bin/virtualenv --relocatable venv
+PATH=/var/vcap/packages/python_2.7/bin:$PATH /var/vcap/packages/python_2.7/bin/virtualenv --always-copy --no-site-packages ${BOSH_INSTALL_TARGET}/venv
+. ${BOSH_INSTALL_TARGET}/venv/bin/activate
+
+shopt -s extglob
+cp -a $PACKAGE_NAME/!(vendor) ${BOSH_INSTALL_TARGET}/
+pip install --upgrade --no-index --find-links $PACKAGE_NAME/vendor/ -r ${BOSH_INSTALL_TARGET}/requirements.txt
+
+PATH=/var/vcap/packages/python_2.7/bin:$PATH /var/vcap/packages/python_2.7/bin/virtualenv --relocatable ${BOSH_INSTALL_TARGET}/venv
 deactivate
-sed -i 's/^\(VIRTUAL_ENV\)=.\+$/\1="\/var\/vcap\/packages\/simpleflaskapp\/venv"/g' venv/bin/activate
+
+cd ${BOSH_INSTALL_TARGET}
+sed -i "s/^\(VIRTUAL_ENV\)=.\+$/\1=\"\/var\/vcap\/packages\/$PACKAGE_NAME\/venv\"/g" venv/bin/activate

@@ -6,3 +6,9 @@ dependencies:
 
 files:
 - simpleflaskapp/**/*
+- simpleflaskapp/vendor/Flask-0.10.1.tar.gz
+- simpleflaskapp/vendor/Jinja2-2.9.6-py2.py3-none-any.whl
+- simpleflaskapp/vendor/MarkupSafe-1.0.tar.gz
+- simpleflaskapp/vendor/Werkzeug-0.12.2-py2.py3-none-any.whl
+- simpleflaskapp/vendor/gunicorn-19.4.5-py2.py3-none-any.whl
+- simpleflaskapp/vendor/itsdangerous-0.24.tar.gz

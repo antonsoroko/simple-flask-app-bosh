@@ -10,7 +10,6 @@ def hello_world():
 def get_datetime():
     return jsonify({'datetime': str(datetime.datetime.now())})
 
-
 @app.route('/date', methods = ['GET'])
 def get_date():
     return jsonify({'date': str(datetime.datetime.now().date())})
