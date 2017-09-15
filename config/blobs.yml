@@ -1,17 +1,17 @@
 ---
-python_2.7/pip-8.1.1-py2.py3-none-any.whl:
+python_2.7/vendor/pip-8.1.1-py2.py3-none-any.whl:
   object_id: 6a0f0ce4-d857-42a8-843b-2410ee23a23d
   sha: 89adc4227395c075ac63845a82cb1de775d77fe0
   size: 1197664
-python_2.7/virtualenv-15.0.1-py2.py3-none-any.whl:
+python_2.7/vendor/virtualenv-15.0.1-py2.py3-none-any.whl:
   object_id: b645531c-bd59-44e9-a9fd-7220085f9ad2
   sha: a5513186e9f7da15642333197f842da8b946675a
   size: 1799857
-python_2.7/wheel-0.29.0-py2.py3-none-any.whl:
+python_2.7/vendor/wheel-0.29.0-py2.py3-none-any.whl:
   object_id: 23309464-2ac1-4cbe-a1db-226e16d864c0
   sha: fcbf015b87179d0ad05eeb1c72282c172e313793
   size: 66878
-python_2.7/setuptools-20.9.0-py2.py3-none-any.whl:
+python_2.7/vendor/setuptools-20.9.0-py2.py3-none-any.whl:
   object_id: 280f31b6-13bb-4f6c-976e-2206bb9e0012
   sha: 7653569429e2e330aa79a61d5f0468da71e1ff40
   size: 508813
@@ -19,3 +19,27 @@ python_2.7/Python-2.7.11.tgz:
   object_id: f474acd8-9cab-4c44-9b78-c3413591cd24
   sha: 62a0b1b703d42999cc4aa9ee3c55eb7efe35802a
   size: 16856409
+simpleflaskapp/vendor/itsdangerous-0.24.tar.gz:
+  object_id: 9632d167-def2-4630-9dd1-f6131c1a90d6
+  sha: 0a6ae9c20cd72e89d75314ebc7b0f390f93e6a0d
+  size: 46541
+simpleflaskapp/vendor/Werkzeug-0.12.2-py2.py3-none-any.whl:
+  object_id: 36220843-a5d3-4c70-92a0-fc10087e6735
+  sha: 953daa9e7294467f02b2863e52b8332d25a68bc8
+  size: 312953
+simpleflaskapp/vendor/gunicorn-19.4.5-py2.py3-none-any.whl:
+  object_id: ab58eb4e-8257-4b2e-acee-29c047a4f175
+  sha: 01e65947bf8ee815ab59acdaa44236438bea422a
+  size: 112846
+simpleflaskapp/vendor/Flask-0.10.1.tar.gz:
+  object_id: 65ab1d95-4659-44c4-bafd-5c5bd375fb28
+  sha: d3d078262b053f4438e2ed3fd6f9b923c2c92172
+  size: 544247
+simpleflaskapp/vendor/Jinja2-2.9.6-py2.py3-none-any.whl:
+  object_id: 7e77f101-028f-4e9b-a5e2-5cd0301ed6a4
+  sha: 16407d9e8e6c18a55321d87ded78fe382ecffddf
+  size: 340680
+simpleflaskapp/vendor/MarkupSafe-1.0.tar.gz:
+  object_id: 50490dd5-8946-4280-8b3b-a0ac89b2d4a8
+  sha: 9072e80a7faa0f49805737a48f3d871eb1c48728
+  size: 14356
