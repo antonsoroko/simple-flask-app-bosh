@@ -20,8 +20,8 @@ case $1 in
 
     . venv/bin/activate
 
-    exec gunicorn simpleflaskapp:app --config /var/vcap/jobs/simpleflaskapp/gunicorn.conf.py \
-      >>  $LOG_DIR/simpleflaskapp.stdout.log \
+    exec chpst -u vcap:vcap gunicorn simpleflaskapp:app --config /var/vcap/jobs/simpleflaskapp/gunicorn.conf.py \
+      1>>  $LOG_DIR/simpleflaskapp.stdout.log \
       2>> $LOG_DIR/simpleflaskapp.stderr.log
 
     ;;
